@@ -1,0 +1,4 @@
+remaining qty field  
+dashboard - price
+grand total
+print option in invoice

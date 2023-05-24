@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+
+<div data-bs-interval="5000" data-bs-ride="carousel">
+    <div class="bg-login-color d-flex align-items-center justify-content-center">
+        <img src="{% static 'assets/images/dollar.jpg' %}" style="height:300px;width: 1800px;">
+    </div>
+    </div>
+<div class="card">
+            <div class="card-body">
+              <div class="table table-bordered table-striped"><h4>Locker Details</h4></div>
+<div class="card-body">
+
+                <table id="example1" class="table table-bordered table-striped">
+                  <tr>
+                    <th>Full Name</th>
+                    <td>{{data.fullname}}</td>
+                     <th>Email</th>
+                    <td>{{data.email}}</td>
+                  </tr>
+
+                  <tr>
+                    <th>Mobile Number</th>
+                    <td>{{data.mobile}}</td>
+                    <th>Address</th>
+                    <td>{{data.address}}</td>
+                  </tr>
+
+                  <tr>
+                    <th>Occupation</th>
+                    <td>{{data.occupation}}</td>
+                    <th>Type Of Locker</th>
+                    <td>{{data.type}}</td>
+                  </tr>
+                  <tr>
+                    <th>Locker Number</th>
+                    <td>{{data.lockernumber}}</td>
+                    <th>Key Number</th>
+                    <td>{{data.keynumber}}</td>
+                  </tr>
+                  <tr>
+                    <th>Instruction(if any)</th>
+                    <td>{{data.instruction}}</td>
+                    <th>Name Of Nominee</th>
+                    <td>{{data.nominee}}</td>
+                  </tr>
+                  <tr>
+                    <th>Relation With Nominee</th>
+                    <td>{{data.relnominee}}</td>
+                    <th>Valuable Details</th>
+                    <td>{{data.valuable}}</td>
+                  </tr>
+                  <tr>
+                    <th>Id Proof</th>
+                    <td>{{data.idproof}}</td>
+                    <th>Status</th>
+                    <td>{{data.status}}</td>
+                  </tr>
+                  <tr>
+                    <th>View Id Proof</th>
+                    <td>
+                      <img src="{{data.image.url}}" style="width:20%">
+                    </td>
+                    <th>View Pic</th>
+                    <td><img src="{{data.image2.url}}" style="width:20%"></td>
+                  </tr>
+                </table>
+</div>
+            </div>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'admin_index.html' %}
+{% load static %}
+{% block body %}
+
+<legend style="color:blue">Manage Assign Locker</legend>
+    <div class="row">
+          <div class="col-sm-12">
+            <section class="panel">
+              <header class="panel-heading">
+                Manage Assign Locker
+              </header>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Locker Number</th>
+                    <th>key Number</th>
+                    <th>Holder Name</th>
+                    <th>Mobile Number</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Locker Assign date</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                {% for i in data %}
+                  <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.lockernumber}}</td>
+                    <td>{{i.keynumber}}</td>
+                    <td>{{i.fullname}}</td>
+                    <td>{{i.mobile}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.status}}</td>
+                    <td>{{i.creationdate}}</td>
+                      <td>
+                        <a href="{% url 'edit_assign' i.id %}">
+                            <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                        </a>
+                        <a href="{% url 'delete_assign' i.id %}" onclick="return confirm('Are you sure?')">
+                            <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i> </button>
+                        </a>
+
+<br>
+
+                    </td>
+                  </tr>
+
+                 {% endfor %}
+                  </tbody>
+<tr>
+                    <th>S.No</th>
+                    <th>Locker Number</th>
+                    <th>key Number</th>
+                    <th>Holder Name</th>
+                    <th>Mobile Number</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Locker Assign date</th>
+                    <th>Action</th>
+                  </tr>
+                </table>
+            </section>
+              </div>
+            </div>
+{% endblock %}

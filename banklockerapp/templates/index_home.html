@@ -1,0 +1,93 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+    <div data-bs-interval="5000" data-bs-ride="carousel">
+    <div class="bg-login-color d-flex align-items-center justify-content-center">
+        <img src="{% static 'assets/images/dollar.jpg' %}" style="height:900px;width: 1800px;">
+    </div>
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+        </path>
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+        </use>
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+        </use>
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+        </use>
+      </g>
+    </svg>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+{% for i in data %}
+        <div class="section-title" data-aos="zoom-out">
+          <h2>About</h2>
+          <p>{{i.pagetitle}}</p>
+        </div>
+
+        <div class="row content" data-aos="fade-up">
+          <div align="center" class="col-md-6">
+            <h5>{{i.description|safe}}</h5>
+          </div>
+            <div align="center" class="col-md-6">
+            <img src="{% static 'assets/images/money.jpg' %}" width="400" alt="">
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section><br><br><br><!-- End About Section -->
+
+
+
+
+    <!-- ======= Contact Section ======= -->
+{% for i in contact %}
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Contact</h2>
+          <p>{{i.pagetitle}}</p>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-4" data-aos="fade-right">
+            <div class="info">
+              <div class="address">
+                <i class="fa fa-map-marker"></i>
+                <h4>Location:</h4>
+                <p>{{i.description}}</p>
+              </div>
+              <div class="email">
+                <i class="fa fa-envelope"></i>
+                <h4>Email:</h4>
+                <p>{{i.email}}</p>
+              </div>
+              <div class="phone">
+                <i class="fa fa-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 {{i.mobile}}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+ {% endfor %}
+    <br><br><br>
+  </main>
+    {% endblock %}

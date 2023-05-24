@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/RailwayReservationDjango.iml" filepath="$PROJECT_DIR$/.idea/RailwayReservationDjango.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/BankLockerproject.iml" filepath="$PROJECT_DIR$/.idea/BankLockerproject.iml" />
     </modules>
   </component>
 </project>

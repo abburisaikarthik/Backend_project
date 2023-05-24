@@ -1,0 +1,42 @@
+{% extends 'admin_index.html' %}
+{% load static %}
+{% block body %}
+
+ <div class="row">
+     {% if request.user.is_staff %}
+     <a class="nav-link" href="/view_subbanker/">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="info-box blue-bg">
+              <i class="fa fa-user"></i>
+              <div class="count">{{admin.count}}</div>
+              <h4 class="">Sub Admins</h4>
+            </div>
+            <!--/.info-box-->
+          </div>
+     </a>
+     {% endif %}
+          <!--/.col-->
+        <a class="nav-link" href="/view-lockertype/">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="info-box brown-bg">
+              <i class="fa fa-lock"></i>
+              <div class="count">{{type.count}}</div>
+              <h4 class="">Listed Locker Types</h4>
+            </div>
+            <!--/.info-box-->
+          </div>
+        </a>
+          <!--/.col-->
+        <a class="nav-link" href="/view_assign/">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="info-box dark-bg">
+              <i class="fa fa-user-plus"></i>
+              <div class="count">{{assign.count}}</div>
+              <h4 class="">Assigned Lockers</h4>
+            </div>
+            <!--/.info-box-->
+          </div>
+          <!--/.col-->
+        </a>
+        </div>
+{% endblock %}

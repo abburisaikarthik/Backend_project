@@ -1,0 +1,48 @@
+{% extends 'admin_index.html' %}
+{% load static %}
+{% block body %}
+
+<legend style="color:black">{% if pid %}Update{% else %}Add{% endif %} Locker Type</legend>
+    <div class="row">
+          <div class="col-lg-10">
+            <section class="panel">
+              <header style="color:blue" class="panel-heading">
+                Fill the Info
+              </header>
+              <div class="panel-body">
+                <div class="form">
+                  <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form action="" method="post">
+                                {% csrf_token %}
+
+                                <div class="form-group">
+                                  <label>Size Of Locker</label>
+                                    <select class="form-control select2bs4" name="type" style="width: 100%;" value="{{lockertype.type}}">
+                                        <option value="">Choose Size of Locker</option>
+                                        <option value="Small"{% if lockertype.type == 'Small' %}selected{% endif %}>Small</option>
+                                        <option value="Medium"{% if lockertype.type == 'Medium' %}selected{% endif %}>Medium</option>
+                                        <option value="Large"{% if lockertype.type == 'Large' %}selected{% endif %}>Large</option>
+                                        <option value="Xtra Large"{% if lockertype.type == 'Xtra Large' %}selected{% endif %}>Xtra Large</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                      <label>Price Of Locker</label>
+                                      <input type="number" placeholder="Price" class="form-control select2bs4" name="price" style="width: 100%;" value="{{lockertype.price}}" required>
+                                  </div>
+                                <br/>
+                                <div>
+                                    <button class="btn btn-primary py-1 px-3" type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+            </div>
+        </div>
+{% endblock %}

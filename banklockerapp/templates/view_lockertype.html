@@ -1,0 +1,55 @@
+{% extends 'admin_index.html' %}
+{% load static %}
+{% block body %}
+
+<legend style="color:blue">Manage Locker Type</legend>
+    <div class="row">
+          <div class="col-sm-12">
+            <section class="panel">
+              <header class="panel-heading">
+                Type Of Locker
+              </header>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Creationdate</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                {% for i in data %}
+                  <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.type}}</td>
+                    <td>{{i.price}}</td>
+                    <td>{{i.creationdate}}</td>
+                      <td>
+                        <a href="{% url 'edit_lockertype' i.id %}">
+                            <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                        </a>
+                        <a href="{% url 'delete_lockertype' i.id %}" onclick="return confirm('Are you sure?')">
+                            <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i> </button>
+                        </a>
+
+<br>
+
+                    </td>
+                  </tr>
+
+                 {% endfor %}
+                  </tbody>
+<tr>
+                    <th>S.No</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Creationdate</th>
+                    <th>Action</th>
+                  </tr>
+                </table>
+            </section>
+              </div>
+            </div>
+{% endblock %}
